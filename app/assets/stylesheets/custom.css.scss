@@ -1,0 +1,20 @@
+@import "bootstrap";
+@import "bootstrap-responsive";
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background: url(image_path("squairy_light.png"));
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
