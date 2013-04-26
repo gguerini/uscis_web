@@ -6,5 +6,7 @@
 <% end %>
 
 <ul id="results">
-  <li><%= @results %></li>
+  <% @results.each do |status| %>
+  <li><strong><%= status[:type] %></strong> - <%= status[:number] %> - <%= status[:status] %></li>
+  <% end %>
 </ul>
