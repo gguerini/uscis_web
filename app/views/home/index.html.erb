@@ -1,0 +1,10 @@
+<h1>USCIS Status Checker</h1>
+
+<%= form_tag(root_path, :remote => false, :"data-type" => :json, :id => "check_form") do |f| %>
+  <%= text_area_tag 'application_numbers' %>
+  <div><%= submit_tag 'Check Status', :disable_with => "Checking..." %></div>
+<% end %>
+
+<ul id="results">
+  <li><%= @results %></li>
+</ul>
