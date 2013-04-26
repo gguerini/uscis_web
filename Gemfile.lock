@@ -39,7 +39,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
-    domain_name (0.5.10)
+    domain_name (0.5.11)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     execjs (1.4.0)
@@ -69,6 +69,7 @@ GEM
     net-http-persistent (2.8)
     nokogiri (1.5.9)
     ntlm-http (0.1.1)
+    pg (0.12.2)
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -129,6 +130,7 @@ DEPENDENCIES
   bootstrap-sass (~> 2.3.1.1)
   coffee-rails (~> 3.2.1)
   jquery-rails
+  pg (= 0.12.2)
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)
   sqlite3

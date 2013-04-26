@@ -2,8 +2,15 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 gem 'uscis_status'
-gem 'sqlite3'
 gem 'bootstrap-sass', '~> 2.3.1.1'
+
+group :development, :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg', '0.12.2'
+end
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
