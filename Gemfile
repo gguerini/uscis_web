@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 gem 'uscis_status'
 gem 'bootstrap-sass', '~> 2.3.1.1'
+gem 'certified'
 
 group :development, :test do
   gem 'sqlite3'
