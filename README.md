@@ -1,8 +1,26 @@
 # Multiple USCIS Status Checker
 
-This app allows you to check multiple application statuses at once.
+This simple website allows you to check multiple application statuses at once. It uses the gem I created that scraps the USCIS website: [USCIS Status Checker](https://github.com/gguerini/uscis_status).
 
 [http://uscisstatus.herokuapp.com](http://uscisstatus.herokuapp.com)
+
+## Installation
+
+Assuming you have Ruby 1.9.2+ with Bundler gem installed:
+
+    $ bundle install
+    $ bundle exec rake db:migrate
+    $ rails s
+
+    gem 'uscis_status'
+
+And then execute:
+
+    $ bundle install
+
+Or install it yourself as:
+
+    $ gem install uscis_status
 
 ## Important
 
