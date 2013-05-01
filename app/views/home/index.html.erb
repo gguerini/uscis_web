@@ -1,3 +1,8 @@
+<script id="item-template" type="text/template">
+{{#results}}
+<li><strong>{{number}}</strong> - {{ number }} - {{ status }}</li>
+{{/results}}
+</script>
 
 <div class="row">
   <div class="span12">
@@ -9,7 +14,7 @@
 <div class="row">
   <div class="span12">
     <h4>Enter all your application numbers, one per line:</h4>
-    <%= form_tag(root_path, :remote => false, :"data-type" => :json, :id => "check_form") do |f| %>
+    <%= form_tag(root_path, :remote => true, :"data-type" => :json, :id => "check_form") do |f| %>
       <%= text_area_tag 'application_numbers', nil, :placeholder => "i.e. MSC0123456789", :rows => "5"  %>
       <div><%= submit_tag 'Check Status', :class => "btn btn-primary", :disable_with => "Checking..." %></div>
     <% end %>
