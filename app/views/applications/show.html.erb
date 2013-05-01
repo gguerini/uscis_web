@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Number:</b>
+  <%= @application.number %>
+</p>
+
+<p>
+  <b>Complete:</b>
+  <%= @application.complete %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @application.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_application_path(@application) %> |
+<%= link_to 'Back', applications_path %>

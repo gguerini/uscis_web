@@ -1,5 +1,8 @@
 UscisWeb::Application.routes.draw do
 
+  resources :applications
+
+
   devise_for :users
   devise_scope :user do
     get "sign_in", :to => "devise/sessions#new"

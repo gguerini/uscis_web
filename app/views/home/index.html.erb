@@ -25,6 +25,9 @@
     <% if user_signed_in? %>
     <h4>Welcome back!</h4>
     <%= link_to "Sign out!", sign_out_path, :via => :delete, :class => "btn btn-primary" %>
+    <br>
+    <%= link_to "My Applications", applications_path %>
+    <%= link_to "Add Application", new_application_path %>
     <% else %>
     <h4>Create an account to keep track!</h4>
     <%= link_to "Sign in!", sign_in_path, :class => "btn btn-primary" %> or
