@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  application_id: 1
+  status_id: 1
+  description: MyString
+  more_info: MyString
+
+two:
+  application_id: 1
+  status_id: 1
+  description: MyString
+  more_info: MyString

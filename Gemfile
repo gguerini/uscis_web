@@ -2,11 +2,12 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 gem 'uscis_status'
-gem 'bootstrap-sass', '~> 2.3.1.1'
+gem 'bootstrap-sass', '~> 2.3.1.0'
 gem 'devise'
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'awesome_print'
 end
 
 group :production do
@@ -14,7 +15,7 @@ group :production do
 end
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
+  gem 'sass-rails',   '~> 3.2'
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
