@@ -3,22 +3,27 @@
 <table class="table table-striped">
   <tr>
     <th>Number</th>
-    <th>Complete</th>
     <th>Status</th>
+    <th></th>
     <th></th>
     <th></th>
   </tr>
 <% @applications.each do |application| %>
   <tr>
     <td><%= application.number %></td>
-    <td><%= application.complete ? "Yes" : "No" %></td>
     <td><%= application.current_step.status.name %></td>
+    <td>
+      <% if application.complete? %>
+        <span class="label label-success">Completed</span>
+      <% else %>
+        <span class="label label-info">In progress</span>
+      <% end %>
+    </td>
+
     <td><%= link_to 'Details', application %></td>
     <td><%= link_to 'Delete', application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New Application', new_application_path %>
+<%= link_to 'Add Application', new_application_path, class: 'btn' %>

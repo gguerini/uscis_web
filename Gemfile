@@ -4,10 +4,10 @@ gem 'rails', '3.2.13'
 gem 'uscis_status'
 gem 'bootstrap-sass', '~> 2.3.1.0'
 gem 'devise'
+gem 'awesome_print'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'awesome_print'
 end
 
 group :production do

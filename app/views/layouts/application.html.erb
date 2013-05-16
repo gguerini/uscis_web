@@ -8,6 +8,17 @@
 </head>
 <body>
   <div class="container">
+    <% if signed_in? %>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <%= link_to 'Dashboard', dashboard_path, class: 'brand' %>
+        <ul class="nav">
+          <li><%= link_to "Add Application", new_application_path %></li>
+          <li><%= link_to "Sign Out", sign_out_path, via: :delete %></li>
+        </ul>
+      </div>
+    </div>
+    <% end %>
     <%= yield %>
   </div>
   <footer class="container">

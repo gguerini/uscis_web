@@ -11,11 +11,10 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :number %><br />
-    <%= f.text_field :number %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <fieldset>
+    <legend>Add New Application</legend>
+    <%= f.label :number, "Application Number:" %>
+    <%= f.text_field :number, placeholder: 'Enter your Application Number' %>
+    <div><%= f.submit "Add", class: 'btn'  %></div>
+  </fieldset>
 <% end %>
