@@ -1,20 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Number:</b>
-  <%= @application.number %>
-</p>
+<h1>Application: <%= @application.number %> </h1>
 
 <p>
   <b>Complete:</b>
-  <%= @application.complete %>
+  <%= @application.complete ? "Yes" : "No"  %>
 </p>
 
-<p>
-  <b>User:</b>
-  <%= @application.user_id %>
-</p>
+<h2>Status:</h2>
 
 
-<%= link_to 'Edit', edit_application_path(@application) %> |
+<table class="table table-striped">
+  <tr>
+    <th style="width: 170px;">Status</th>
+    <th>Description</th>
+  </tr>
+<% @steps.each do |step| %>
+  <tr>
+    <td><%= step.status.name %></td>
+    <td><%= step.description %></td>
+  </tr>
+<% end %>
+</table>
+
+
 <%= link_to 'Back', applications_path %>
