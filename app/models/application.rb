@@ -10,6 +10,8 @@ class Application < ActiveRecord::Base
   before_create :validate_application_number
   after_create :update_current_step
 
+  default_scope order("complete ASC")
+
   def current_step
     steps.last
   end
