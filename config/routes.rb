@@ -2,7 +2,6 @@ UscisWeb::Application.routes.draw do
 
   resources :applications
 
-
   devise_for :users
   devise_scope :user do
     get "sign_in", :to => "devise/sessions#new"
@@ -11,5 +10,7 @@ UscisWeb::Application.routes.draw do
   end
 
   root :to => 'home#index'
+
+  get 'dashboard', to: "applications#index"
 
 end
