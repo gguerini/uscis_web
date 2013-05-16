@@ -15,6 +15,6 @@
     <legend>Add New Application</legend>
     <%= f.label :number, "Application Number:" %>
     <%= f.text_field :number, placeholder: 'Enter your Application Number' %>
-    <div><%= f.submit "Add", class: 'btn'  %></div>
+    <div><%= f.submit "Add", class: 'btn', :disable_with => "Processing..."  %></div>
   </fieldset>
 <% end %>

@@ -16,24 +16,24 @@
     <h4>Enter all your application numbers, one per line:</h4>
     <%= form_tag(root_path, :remote => true, :"data-type" => :json, :id => "check_form") do |f| %>
       <%= text_area_tag 'application_numbers', nil, :placeholder => "i.e. MSC0123456789", :rows => "5"  %>
-      <div><%= submit_tag 'Check Status', :class => "btn btn-primary", :disable_with => "Checking..." %></div>
+      <div><%= submit_tag 'Check Status', :class => "btn", :disable_with => "Checking..." %></div>
     <% end %>
   </div>
-  <div class="span2">or</div>
+  <div class="span2"></div>
   <div class="span5">
     <%=  %>
     <% if user_signed_in? %>
     <h4>Welcome back!</h4>
-    <%= link_to "Sign out!", sign_out_path, :via => :delete, :class => "btn btn-primary" %>
+    <%= link_to "Sign out!", sign_out_path, :via => :delete, :class => "btn" %>
     <br>
     <hr>
     <%= link_to "My Applications", applications_path %>
     <br>
     <%= link_to "Add Application", new_application_path %>
     <% else %>
-    <h4>Create an account to keep track!</h4>
-    <%= link_to "Sign in!", sign_in_path, :class => "btn btn-primary" %> or
-    <%= link_to "Register", sign_up_path, :class => "btn btn-primary" %>
+    <h4>Create an account to keep track of all your applications automatically!</h4>
+    <%= link_to "Sign in!", sign_in_path, :class => "btn" %> or
+    <%= link_to "Register", sign_up_path, :class => "btn" %>
     <% end %>
   </div>
 </div>
