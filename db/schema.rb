@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130502163547) do
+ActiveRecord::Schema.define(:version => 20130517203941) do
 
   create_table "applications", :force => true do |t|
     t.string   "number",                        :null => false
@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(:version => 20130502163547) do
   create_table "steps", :force => true do |t|
     t.integer  "application_id", :null => false
     t.integer  "status_id",      :null => false
-    t.string   "description"
-    t.string   "more_info"
+    t.text     "description"
+    t.text     "more_info"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
