@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  before_filter :redirect_authenticated_user
+
   def index
     @results = []
 
@@ -12,4 +14,10 @@ class HomeController < ApplicationController
       format.json { render json: @results}
     end
   end
+
+  private
+
+    def redirect_authenticated_user
+      redirect_to dashboard_path if signed_in?
+    end
 end
