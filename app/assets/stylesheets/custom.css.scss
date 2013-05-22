@@ -11,6 +11,14 @@ body {
   padding-bottom: 40px;
 }
 
+#results {
+  li {
+    border-bottom: 1px dotted white;
+    margin-bottom: 10px;
+  }
+  span.status { display: block; }
+}
+
 section {
   overflow: auto;
 }

@@ -1,6 +1,6 @@
 <script id="item-template" type="text/template">
 {{#results}}
-<li><strong>{{number}}</strong> - {{ number }} - {{ status }}</li>
+<li><strong>{{number}}</strong> - {{ type }}<span class="status">{{ status }}</span></li>
 {{/results}}
 </script>
 
@@ -14,7 +14,7 @@
 <div class="row">
   <div class="span5">
     <h4>Enter all your application numbers, one per line:</h4>
-    <%= form_tag(root_path, :remote => true, :"data-type" => :json, :id => "check_form") do |f| %>
+    <%= form_tag(root_path, :remote => false, :"data-type" => :json, :id => "check_form") do |f| %>
       <%= text_area_tag 'application_numbers', nil, :placeholder => "i.e. MSC0123456789", :rows => "5"  %>
       <div><%= submit_tag 'Check Status', :class => "btn", :disable_with => "Checking..." %></div>
     <% end %>
@@ -42,7 +42,7 @@
   <div class="span12">
     <ul id="results">
       <% @results.each do |status| %>
-      <li><strong><%= status[:type] %></strong> - <%= status[:number] %> - <%= status[:status] %></li>
+      <li><strong><%= status[:number] %></strong> - <%= status[:type] %><span class="status"><%= status[:status] %></span></li>
       <% end %>
     </ul>
   </div>
