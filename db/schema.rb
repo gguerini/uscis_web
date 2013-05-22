@@ -33,12 +33,12 @@ ActiveRecord::Schema.define(:version => 20130517203941) do
   add_index "statuses", ["name"], :name => "index_statuses_on_name", :unique => true
 
   create_table "steps", :force => true do |t|
-    t.integer  "application_id", :null => false
-    t.integer  "status_id",      :null => false
-    t.text     "description"
-    t.text     "more_info"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.integer  "application_id",                :null => false
+    t.integer  "status_id",                     :null => false
+    t.text     "description",    :limit => 255
+    t.text     "more_info",      :limit => 255
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   add_index "steps", ["application_id", "status_id"], :name => "index_steps_on_application_id_and_status_id", :unique => true
