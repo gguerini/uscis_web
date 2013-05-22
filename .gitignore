@@ -14,3 +14,6 @@
 /log/*.log
 /tmp
 .DS_Store
+
+uscis_dev
+uscis_test
