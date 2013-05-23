@@ -1,11 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  number: MyString
-  complete: 
-  user_id: 1
+  id: 100
+  number: MSC1390803619
+  complete: 0
+  user_id: 200
 
-two:
-  number: MyString
-  complete: 
-  user_id: 1
+# two:
+#   id: 101
+#   number: MSC1390803516
+#   complete: 0
+#   user_id: 200
+
+# three:
+#   id: 103
+#   number: MSC1390803218
+#   complete: 0
+#   user_id: 2

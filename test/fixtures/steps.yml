@@ -1,13 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  application_id: 1
-  status_id: 1
+  application_id: 100
+  status_id: 300
   description: MyString
   more_info: MyString
 
-two:
-  application_id: 1
-  status_id: 1
-  description: MyString
-  more_info: MyString
+# two:
+#   application_id: 102
+#   status_id: 2
+#   description: MyString
+#   more_info: MyString
+
+# two:
+#   application_id: 103
+#   status_id: 3
+#   description: MyString
+#   more_info: MyString

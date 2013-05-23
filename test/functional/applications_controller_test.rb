@@ -3,6 +3,7 @@ require 'test_helper'
 class ApplicationsControllerTest < ActionController::TestCase
   setup do
     @application = applications(:one)
+    login_as users(:one)
   end
 
   test "should get index" do
@@ -17,26 +18,18 @@ class ApplicationsControllerTest < ActionController::TestCase
   end
 
   test "should create application" do
+    new_app_number = "MSC1390803620"
     assert_difference('Application.count') do
-      post :create, application: { complete: @application.complete, number: @application.number, user_id: @application.user_id }
+      post :create, application: { number: new_app_number }
     end
 
-    assert_redirected_to application_path(assigns(:application))
+    @new_application = Application.where(number: new_app_number).first
+    assert_redirected_to application_path(@new_application)
   end
 
   test "should show application" do
     get :show, id: @application
     assert_response :success
-  end
-
-  test "should get edit" do
-    get :edit, id: @application
-    assert_response :success
-  end
-
-  test "should update application" do
-    put :update, id: @application, application: { complete: @application.complete, number: @application.number, user_id: @application.user_id }
-    assert_redirected_to application_path(assigns(:application))
   end
 
   test "should destroy application" do

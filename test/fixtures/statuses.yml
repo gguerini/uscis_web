@@ -1,7 +1,38 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+# # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
+  id: 300
+  name: Initial Review
+
+nine:
+  id: 301
+  name: Acceptance
 
 two:
-  name: MyString
+  id: 302
+  name: Request for Eviden30ce
+
+three:
+  id: 303
+  name: Request for Eviden30ce Response Review
+
+four:
+  id: 304
+  name: Testing and Interview
+
+five:
+  id: 305
+  name: Decision
+
+six:
+  id: 306
+  name: Post Decision Activity
+
+seven:
+  id: 307
+  name: Oath Ceremony
+
+eight:
+  id: 308
+  name: Card/ Document Production
+
