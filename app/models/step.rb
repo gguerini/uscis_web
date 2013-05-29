@@ -5,4 +5,7 @@ class Step < ActiveRecord::Base
 
   belongs_to :application
   belongs_to :status
+
+  scope :newest, order("created_at DESC")
+  scope :oldest, order("created_at ASC")
 end

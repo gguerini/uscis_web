@@ -13,7 +13,7 @@ class ApplicationsController < ApplicationController
 
   def show
     @application = current_user.applications.find(params[:id])
-    @steps = @application.steps
+    @steps = @application.steps.newest
 
     respond_to do |format|
       format.html # show.html.erb
