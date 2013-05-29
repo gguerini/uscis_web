@@ -32,7 +32,7 @@ class Application < ActiveRecord::Base
 
   def self.update_all_statuses
     incomplete.each do |app|
-      app.update_current_step
+      StatusUpdateWorker.perform_async(app.id)
     end
   end
 
