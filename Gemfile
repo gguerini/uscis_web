@@ -5,6 +5,7 @@ gem 'uscis_status'
 gem 'bootstrap-sass', '~> 2.3.1.0'
 gem 'devise'
 gem 'sidekiq'
+gem 'rufus-scheduler'
 
 group :production do
   gem 'pg', '0.12.2'
