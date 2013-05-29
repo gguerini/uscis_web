@@ -11,9 +11,14 @@ class Application < ActiveRecord::Base
   after_create :update_current_step
 
   default_scope order("complete ASC")
+  scope :incomplete, where(complete: false)
 
   def current_step
     steps.last
+  end
+
+  def status_update_date
+    current_step.created_at.strftime('%m/%d/%Y')
   end
 
   def update_current_step
@@ -23,6 +28,12 @@ class Application < ActiveRecord::Base
        steps.create!(status_id: status.id, description: step[:description], more_info: step[:general_description])
     end
     current_step
+  end
+
+  def self.update_all_statuses
+    incomplete.each do |app|
+      app.update_current_step
+    end
   end
 
   private
