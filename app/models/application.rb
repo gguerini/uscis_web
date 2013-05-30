@@ -7,10 +7,9 @@ class Application < ActiveRecord::Base
   belongs_to :user
   has_many :steps, dependent: :destroy
 
-  before_create :validate_application_number
-  after_create :update_current_step
+  # before_create :validate_application_number
+  # after_create :update_current_step
 
-  default_scope order("complete ASC")
   scope :incomplete, where(complete: false)
 
   def current_step
@@ -22,10 +21,16 @@ class Application < ActiveRecord::Base
   end
 
   def update_current_step
-    step = get_current_step_from_uscis
-    status = Status.find_by_name(step[:status])
-    if current_step.nil? or current_step.status_id != status.id
-       steps.create!(status_id: status.id, description: step[:description], more_info: step[:general_description])
+    unless complete
+      step = get_current_step_from_uscis
+      status = Status.find_by_name(step[:status])
+      logger.info "Status not found: '#{step[:status]}'." if status.nil?
+
+      unless status.nil?
+        if current_step.nil? or current_step.status != status
+          steps.create!(status_id: status.id, description: step[:description], more_info: step[:general_description])
+        end
+      end
     end
     current_step
   end
@@ -39,9 +44,7 @@ class Application < ActiveRecord::Base
   private
 
     def get_current_step_from_uscis
-      unless complete
-        USCISStatus.check(number).first
-      end
+      USCISStatus.check(number).first
     end
 
     def validate_application_number
