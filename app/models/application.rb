@@ -7,8 +7,8 @@ class Application < ActiveRecord::Base
   belongs_to :user
   has_many :steps, dependent: :destroy
 
-  # before_create :validate_application_number
-  # after_create :update_current_step
+  before_create :validate_application_number
+  after_create :update_current_step
 
   scope :incomplete, where(complete: false)
 
@@ -44,12 +44,15 @@ class Application < ActiveRecord::Base
   private
 
     def get_current_step_from_uscis
-      USCISStatus.check(number).first
+      step = Rails.cache.fetch("step#{number}", :expires_in => 1.minute) do
+        USCISStatus.check(number).first
+      end
     end
 
     def validate_application_number
       step = get_current_step_from_uscis
       if step[:status].include?("invalid")
+        Rails.cache.delete("step#{number}")
         errors.add(:base, 'Invalid application number')
         return false
       else
