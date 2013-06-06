@@ -26,6 +26,8 @@ class Application < ActiveRecord::Base
       status = Status.find_by_name(step[:status])
       logger.info "Status not found: '#{step[:status]}'." if status.nil?
 
+      update_attributes(complete: true) if step[:complete] == "true"
+
       unless status.nil?
         if current_step.nil? or current_step.status != status
           steps.create!(status_id: status.id, description: step[:description], more_info: step[:general_description])
